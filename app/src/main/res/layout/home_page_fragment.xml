@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_page_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/home_page_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--NestedScrollView包裹内容导致recycleview不能复用view，需要设置recyclview高度-->
+        <com.lcodecore.tkrefreshlayout.view.QuanNestedScrollView
+           android:id="@+id/quanscrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            tools:ignore="ExtraText">
+
+            <!--descendantFocusability获取焦点问题-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/headview_layout"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                       >
+
+                        <com.example.lingquan.coustom.AutoLooper
+                            android:id="@+id/looper_banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:overScrollMode="never">
+
+                        </com.example.lingquan.coustom.AutoLooper>
+
+                        <LinearLayout
+                            android:id="@+id/looper_point"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                    <!--标题-->
+
+                    <include layout="@layout/incluc_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"/>
+                </LinearLayout>
+
+
+
+
+                <!--解决滑动冲突，但无法完全展示recyclerview-->
+                <!--android:nestedScrollingEnabled="false"-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/page_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:overScrollMode="never"
+                    android:background="#EFEEEE">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+        </com.lcodecore.tkrefreshlayout.view.QuanNestedScrollView>
+
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".ui.activity.KouLingActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/kouling_backimg"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@mipmap/backarrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="淘口令"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp">
+
+
+        <ImageView
+            android:id="@+id/kouling_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="33dp"
+           />
+
+        <com.example.lingquan.coustom.LoadingView
+            android:id="@+id/cover_loading"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/loading_tishi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:text="加载出错，请点击重试"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/kouling_txt"
+        android:layout_width="244dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shap_kouling_editxt"
+        android:focusable="false"
+        android:gravity="center"
+        android:textColor="@color/slateblue" />
+
+
+    <Button
+        android:id="@+id/kouling_btn"
+        android:layout_width="141dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/shap_kouling_btn"
+        android:textColor="@color/white" />
+</LinearLayout>

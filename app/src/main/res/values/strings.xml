@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">券多多</string>
+    <string name="sheng_price">省%1$d元</string>
+    <string name="yuan_price">￥%1$s</string>
+    <string name="sale_pepol">%1$d人已经购买</string>
+    <string name="jx_yuan_price">原价：%1$s</string>
+
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <!--历史记录-->
+    <LinearLayout
+        android:id="@+id/search_history_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜索历史"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/delete_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/delete" />
+        </RelativeLayout>
+
+        <com.example.lingquan.coustom.TextFlowLayout
+            android:id="@+id/search_hisotory_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            app:horizontalspace="10dp"
+            app:verticalspace="10dp" />
+
+    </LinearLayout>
+
+    <!--推荐关键字-->
+
+    <LinearLayout
+        android:id="@+id/search_recommend_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热门搜索"
+                android:textSize="14sp" />
+
+
+        </RelativeLayout>
+
+        <com.example.lingquan.coustom.TextFlowLayout
+            android:id="@+id/search_recommend_flow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:horizontalspace="10dp"
+            app:verticalspace="10dp" />
+
+    </LinearLayout>
+
+
+
+    <!--搜索结果-->
+    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+        android:id="@+id/search_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+
+</LinearLayout>
